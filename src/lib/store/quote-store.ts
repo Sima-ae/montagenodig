@@ -75,7 +75,12 @@ export const useQuoteStore = create<QuoteStore>()(
 
         switch (currentStep) {
           case 0:
-            isValid = Boolean(projectData.type && projectData.propertyType);
+            isValid = Boolean(
+              projectData.type &&
+                projectData.propertyType &&
+                projectData.startDate &&
+                projectData.timeline
+            );
             break;
           case 1:
             isValid = Boolean(projectData.area && projectData.rooms?.length);
